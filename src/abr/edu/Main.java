@@ -113,7 +113,8 @@ public class Main {
         System.out.println(getMethodName() + employeeList.stream()
                 .filter(engineer) //.filter(x1 -> {return x1.getTitle().equals("Инженер");})
                 .sorted(Comparator.comparing(Employee::getAge).reversed())
-                // .sorted((x, y) -> Integer.compare(y.getAge(), x.getAge()))
+                // .sorted((x, y)
+                // -> Integer.compare(y.getAge(), x.getAge()))
                 .limit(3)
                 .map(Employee::name)
                 .toList());

@@ -98,7 +98,11 @@ public class Main {
      / Найдите в списке целых чисел 3-е наибольшее «уникальное» число (пример: 5 2 10 9 4 3 10 1 13 => 9,
     в отличие от прошлой задачи здесь разные 10 считает за одно число) */
     static void ex3() {
-        intList.stream().sorted(Comparator.reverseOrder()).distinct().skip(2).findFirst().ifPresent(Main::print);
+        intList.stream()
+                .sorted(Comparator.reverseOrder())
+                .distinct().skip(2)
+                .findFirst()
+                .ifPresent(Main::print);
     }
 
 /* Exercise 4 /
@@ -106,9 +110,7 @@ public class Main {
 необходимо получить список имен 3 самых старших сотрудников с должностью «Инженер», в порядке убывания возраста */
 
     static void ex4() {
-        Predicate<Employee> engineer = x -> {
-            return x.getTitle().equals("Инженер");
-        };
+        Predicate<Employee> engineer = Employee::isEngineer;
 
         System.out.println(getMethodName() + employeeList.stream()
                 .filter(engineer) //.filter(x1 -> {return x1.getTitle().equals("Инженер");})

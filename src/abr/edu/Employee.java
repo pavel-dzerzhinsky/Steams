@@ -18,6 +18,7 @@ public class Employee {
         return title;
     }
 
+    public boolean isEngineer() {return "Инженер".equals(this.title);}
 
     public Employee(String name, int age, String title) {
         this.name = name;
